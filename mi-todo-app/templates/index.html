@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Lista de Tareas (To-Do)</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .task-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #eee; }
+        .completed { text-decoration: line-through; color: #888; }
+        .actions a { margin-left: 10px; text-decoration: none; color: blue; }
+        .actions a.delete { color: red; }
+    </style>
+</head>
+<body>
+    <h1>📋 Mi Lista de Tareas</h1>
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content" placeholder="Escribe una nueva tarea..." required>
+        <input type="submit" value="Añadir Tarea">
+    </form>
+    <hr>
+    
+    <div>
+        {% for task in tasks %}
+            <div class="task-item {% if task.completed == 1 %}completed{% endif %}">
+                <span>{{ task.content }}</span>
+                <div class="actions">
+                    <a href="{{ url_for('complete', id=task.id) }}">
+                        {% if task.completed == 0 %}✔️ Completar{% else %}↩️ Pendiente{% endif %}
+                    </a>
+                    <a href="{{ url_for('delete', id=task.id) }}" class="delete">🗑️ Eliminar</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
