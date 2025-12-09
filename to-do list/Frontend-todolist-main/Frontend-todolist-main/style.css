@@ -1,0 +1,102 @@
+/* Estilos Generales y Reseteo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+/* Estilos del Grupo de Entrada */
+.input-group {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+#input-task {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+}
+
+.input-group button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.input-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de la Lista de Tareas */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para Tareas Completadas (¡El TACHADO!) */
+.completed {
+    text-decoration: line-through; /* La clave para tachar el texto */
+    color: #6c757d;
+    background-color: #f8f9fa;
+}
+
+/* Estilos de los Botones de la Tarea */
+.task-actions button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.task-actions button:nth-child(1) { /* Estilo para el botón "Completar" */
+    background-color: #28a745;
+}
+
+.task-actions button:hover {
+    opacity: 0.8;
+}
